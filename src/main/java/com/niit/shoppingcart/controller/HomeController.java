@@ -17,6 +17,18 @@ public class HomeController {
 		return "index";
 	}
 
+	@RequestMapping("/example")
+	public String example() {
+		
+		return "general";
+	}
+	
+	@RequestMapping("/example2")
+	public String example2() {
+		
+		return "general2";
+	}
+	
 	@RequestMapping("/signin")
 	public ModelAndView login() {
 		
@@ -32,13 +44,20 @@ public class HomeController {
 		model.addAttribute("userClickedregistration", "true");
 		return "index";
 	}
+	
+	@RequestMapping("/registered")
+	public String registered(Model model) {
+
+		model.addAttribute("successMessage", "You have successfully registered. Thank you.");
+		return "index";
+	}
 
 	@RequestMapping("/validate")
 	public String validatelogin(@RequestParam(name="userid") String id, @RequestParam(name="pswd") String pwd, Model model, HttpSession session) {
 		
 		if (id.equals("niit") && pwd.equals("niit"))
 		{
-			model.addAttribute("successMessage", "you logged in!! Damnnn....");
+			//model.addAttribute("successMessage", "you logged in!! Damnnn....");
 			session.setAttribute("successMessage", "you logged in!! Damnnn....");
 			return "index";
 		}
@@ -50,5 +69,11 @@ public class HomeController {
 		
 		
 	}
-
+	
+	@RequestMapping("/signout")
+	public String logut(HttpSession session) {
+		
+		session.removeAttribute("successMessage");
+		return "index";
+	}
 }

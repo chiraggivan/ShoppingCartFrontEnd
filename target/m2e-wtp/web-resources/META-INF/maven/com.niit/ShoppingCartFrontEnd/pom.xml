@@ -8,6 +8,13 @@
 	<name>ShoppingCartFrontEnd Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
+	
+		<!-- Contacting backendproject with front end -->
+		<dependency>
+			<groupId>com.niit</groupId>
+			<artifactId>shoppingcartbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<dependency>
