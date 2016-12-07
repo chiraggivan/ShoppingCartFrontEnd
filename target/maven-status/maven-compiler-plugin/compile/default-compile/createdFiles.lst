@@ -1,1 +1,4 @@
+com\niit\shoppingcart\controller\ProductController.class
+com\niit\shoppingcart\exception\ShoppingCartExceptionHandler.class
+com\niit\shoppingcart\controller\UserController.class
 com\niit\shoppingcart\controller\HomeController.class
