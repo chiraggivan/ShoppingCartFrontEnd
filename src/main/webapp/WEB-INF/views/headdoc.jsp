@@ -1,25 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-    <%@taglib  prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
-    <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- 	<spring:url value="/resources"  var="uri"/>
- 	<spring:url value="/" var="context" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="${uri}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="resources/css/mystyle.css">
-<title>Landing Page </title>
+<title>Insert title here</title>
 </head>
 <body>
 <div class="container" >
-<nav class="navbar  navbar-default navbar-light bg-faded">
+<nav class="navbar navbar-full navbar-default navbar-light bg-faded">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -29,46 +18,44 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="${context}">ElectraHub</a>
+      <a class="navbar-brand" href="#">Brand</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="${context}">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="manage_product">Product</a></li>
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-        <c:if test="${not empty loggedInUserId}">
-				<li><a>Welcome : ${loggedInUser}</a></li>
-			</c:if>
-        
-        
-        
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" 
-          aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-	           <c:choose >
-	           
-	           <c:when test="${not empty loggedInUserId}">
-	                <li><a href="logout">Logout</a></li>
-	            	<li><a href="cart">Cart</a></li>
-			   
-	           </c:when>
-	           <c:when test="${loggedOut eq true}">
-	           	<li><a href="signin">Login</a></li>
-	            	<li><a href="register">Register</a></li>
-			
-	           </c:when>
-	           </c:choose>
-	            <%-- <c:if test="${}">
-					</c:if>
-				<c:if test="${not empty loggedInUserId}">
-				</c:if> --%>
-           </ul>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -76,3 +63,5 @@
 </nav>
 </div>
 
+</body>
+</html>
