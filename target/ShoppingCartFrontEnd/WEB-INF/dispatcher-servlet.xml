@@ -1,21 +1,24 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:webflow="http://www.springframework.org/schema/webflow-config"
 	xsi:schemaLocation="
  http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
  http://www.springframework.org/schema/mvc
  http://www.springframework.org/schema/mvc/spring-mvc.xsd
  http://www.springframework.org/schema/context
- http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+ http://www.springframework.org/schema/context/spring-context-4.0.xsd
+ http://www.springframework.org/schema/webflow-config
+ http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd">
 
-	<context:component-scan base-package="com.niit.shoppingcart" />
-		
-		<mvc:annotation-driven />
-		
-		<mvc:resources mapping="/resources/**" location="/resources/"
-	cache-period="31556926"/>
+	<context:component-scan base-package="com.niit.*" />
+
+	<mvc:annotation-driven />
+
+	<mvc:resources mapping="/resources/**" location="/resources/"
+		cache-period="31556926" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
@@ -25,4 +28,32 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
+
+	<!-- <bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" /> -->
+
+	<!-- WebFlow configuration -->
+
+	<!-- <webflow:flow-executor id="flowExecutor" />
+
+	<webflow:flow-registry id="flowRegistry"
+		flow-builder-services="flowBuilderServices" base-path="/WEB-INF">
+		<webflow:flow-location id="cart_checkout" path="/checkout.xml" />
+	</webflow:flow-registry>
+
+	<webflow:flow-builder-services id="FlowBuilderServices"
+		view-factory-creator="viewFactoryCreator" />
+
+	<bean class="org.srpingframework.webflow.mvc.servlet.FlowHandleAdapter">
+		<property name="flowExecutor" ref="flowExecutor" />
+	</bean>
+
+	<bean class="org.srpingframework.webflow.mvc.servlet.FlowHandleMapping">
+		<property name="flowRegistry" ref="flowRegistry" />
+		<property name="order" value="0" />
+	</bean>
+
+	<mvc:resources location="/resources/" mapping="/resources/**" />
+	<mvc:annotation-driven /> -->
+
 </beans>
